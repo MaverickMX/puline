@@ -1,0 +1,44 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+
+    .logo{
+
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-family: $fuenteLogo;
+        gap: 1rem;
+        color: $primerColor;
+
+        img{
+            height: 10vh;
+
+        }
+    }
+
+    .headerIzquierdo{
+        margin-right: 1rem;
+        nav{
+
+            .menu{
+                display: flex;
+                list-style-type: none;
+                gap: 1rem;
+    
+                .menuItem{
+                    a{
+                        text-decoration: none;
+                        color: $primerColor;
+
+                        &:hover{
+                            color: $segundoColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -50,9 +50,11 @@ function preguntarNombre() {
 
       document.write("<p>" + nombre + " cuentanos qué te gustaría hacer hoy? </p>");
         /* Aquí podría ejecutar tramite() */
+        
       break;
     }else {
         alert('Favor de ingresar un nombre valido');
+        
     }
   }
 }

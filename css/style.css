@@ -1,9 +1,31 @@
-body{
-    background-image: url('../img/fondo.jpg');
-    background-size: cover;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
-p{
-    color: white;
-    font-size: 30px;
-}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh; }
+  header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Fraunces", serif;
+    gap: 1rem;
+    color: #606BFE; }
+    header .logo img {
+      height: 10vh; }
+  header .headerIzquierdo {
+    margin-right: 1rem; }
+    header .headerIzquierdo nav .menu {
+      display: flex;
+      list-style-type: none;
+      gap: 1rem; }
+      header .headerIzquierdo nav .menu .menuItem a {
+        text-decoration: none;
+        color: #606BFE; }
+        header .headerIzquierdo nav .menu .menuItem a:hover {
+          color: #FAE48E; }
