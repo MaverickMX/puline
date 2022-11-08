@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +27,79 @@ header {
       gap: 1rem; }
       header .headerIzquierdo nav .menu .menuItem a {
         text-decoration: none;
-        color: #606BFE; }
+        color: #606BFE;
+        font-family: "Alata", sans-serif; }
         header .headerIzquierdo nav .menu .menuItem a:hover {
           color: #FAE48E; }
+
+.tarjetas {
+  width: 300px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem; }
+  .tarjetas h4 {
+    font-family: "Fraunces", serif;
+    text-align: center;
+    color: #606BFE;
+    font-size: 1.5rem;
+    margin-bottom: 1rem; }
+  .tarjetas img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: .5rem; }
+  .tarjetas .contenedorEdad {
+    display: flex;
+    margin-bottom: .5rem; }
+    .tarjetas .contenedorEdad .tituloEdad {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+    .tarjetas .contenedorEdad .valorEdad {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+  .tarjetas .contenedorSexo {
+    display: flex;
+    margin-bottom: .5rem; }
+    .tarjetas .contenedorSexo .tituloSexo {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+    .tarjetas .contenedorSexo .valorSexo {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+  .tarjetas .contenedorTalla {
+    display: flex;
+    margin-bottom: .5rem; }
+    .tarjetas .contenedorTalla .tituloTalla {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+    .tarjetas .contenedorTalla .valorTalla {
+      font-family: "Alata", sans-serif;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center; }
+  .tarjetas button {
+    border: none;
+    background-color: #FAE48E;
+    color: #606BFE;
+    font-family: "Alata", sans-serif;
+    width: 30%;
+    padding-block: .5rem;
+    border-radius: 5px;
+    margin-inline: 1%; }
+
+.adopcionesMain {
+  background-color: #606BFE;
+  padding: 3rem;
+  display: flex;
+  flex-flow: wrap;
+  gap: 40px; }
