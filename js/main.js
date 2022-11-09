@@ -8,7 +8,7 @@ const GATOS = [];
 
 /* Función constructora para ingresar mascotas nuevas en adopción */
 class Mascota {
-  constructor(nombre, especie, edad, talla, sociable, sexo, caracter, estado) {
+  constructor(nombre, especie, edad, talla, sociable, sexo, caracter, estado, imagen) {
     this.nombre = nombre;
     this.especie = especie;
     this.edad = edad;
@@ -17,6 +17,7 @@ class Mascota {
     this.sexo = sexo;
     this.caracter = caracter;
     this.estado = estado;
+    this.imagen = imagen;
   }
 
   saludar() {
@@ -48,7 +49,7 @@ function preguntarNombre() {
 
     if (comprobar()) {
 
-      document.write("<p>" + nombre + " cuentanos qué te gustaría hacer hoy? </p>");
+      alert(`${nombre} cuentanos que te gustaría hacer hoy?`);
         /* Aquí podría ejecutar tramite() */
         
       break;
@@ -61,7 +62,7 @@ function preguntarNombre() {
 
 /* función que sirve para comprobar si un usuario está ingresando un nombre valido, solo debe ingresar strings, no son validos los números ni campos vacíos */
 /* Debo checar como hacer por si un usuario ingresa varios espacios salga false ya que null no me está funcionando */
-let comprobar = () => nombre != "" && isNaN(verificacion()) && nombre != null;
+let comprobar = () => nombre != "" && isNaN(verificacion()) && nombre != null && nombre != " ";
 
 /* Función para convertir un nombre en número */
 
@@ -71,19 +72,56 @@ let verificacion = () => parseFloat(nombre);
 
 let tramite = () => {
 
-    document.write('<p>Ingresa 1 si deseas dar en adopción a una mascota </p>');
-    document.write('<p>Ingresa 2 si deseas adoptar una mascota</p>');
+    
+
+    while(true){
+
+    let tramite = prompt('Ingresa 1 si quieres dar en adopción, ingresa 2 si quieres adoptar');
+
+     if (tramite == 1) {
+      darEnAdopcion();
+    } else if( tramite == 2){
+      adoptar();
+    } else{
+      alert('Ingresa una opción valida');
+    }
+
+  }
+
+    
 
 };
 
+function darEnAdopcion () {
+  /* esto debe ser un form */
+  let nombreMascota = prompt('Ingresa el nombre de la mascota');
+  /* esto debe ser un button de dos opciones gato o perro */
+  let especieMascota = prompt('Ingresa la especie de la mascota');
+  /* esto debe ser un rango de numeros */
+  let edadMacota = prompt('Ingrese la edad de la mascota');
+  /* esto debe ser tres opciones chico mediano o grande */
+  let tallaMascota = prompt('Ingrese la talla de la mascota');
+  /* Esto debe ser un checkbox entre animales (macho y hembra), personas, otras especies*/
+  let sociableMacota = prompt('Ingrese con quien es sociable la mascota');
+  /* Esto debe ser dos opciones macho o hembra */
+  let sexoMascota = prompt('Ingrese el sexo de la mascota');
+  /* Esto debe ser dos opciones tranquilo o jugueton*/
+  let caracterMascota =  prompt('Ingrese el caracter de la mascota');
+  /* Esto debe ser el estado en donde está */
+  let estadoMascota = prompt('Ingrese el estado en donde se ubica la mascota');
+  /* Esto debe de ser links de imagenes de la mascota */
+  let imagenMascota = prompt('Ingrese las imagenes de la mascota');
+
+  Mascota(n)/* aWUí ME QUEDE */
+
+}
 
 
-let desplegarMenu = () => {
-  alert("Recuerda abrir la consola para tener una mejor experiencia");
-  console.log("Digita 1 para perros");
-  console.log("Digita 2 para gatos");
 
-  let tipo = prompt("Qué tipo de mascota te gustaría adoptar?");
+let adoptar = () => {
+ 
+
+  let tipo = prompt("Qué tipo de mascota te gustaría adoptar? Ingresa 1 para perros, ingresa 2 para gatos");
 
   switch (tipo) {
     case "1":
@@ -108,7 +146,7 @@ let menuPerros = (_) => {
     alert(
       "No cuentas con el ingreso suficiente para adoptar este tipo de mascota, intenta con un gato"
     );
-    desplegarMenu();
+    adoptar();
   } else {
     alert("No cuentas con el ingreso suficiente para mantener a una mascota");
   }
