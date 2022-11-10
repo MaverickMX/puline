@@ -45,12 +45,12 @@ let iniciar = () => {
 function preguntarNombre() {
 
   while (true) {
+
     nombre = prompt("Hola, bienvenido a Pupline. Por favor ingresa tu nombre");
 
     if (comprobar()) {
 
       alert(`${nombre} cuentanos que te gustaría hacer hoy?`);
-        /* Aquí podría ejecutar tramite() */
         
       break;
     }else {
@@ -61,7 +61,7 @@ function preguntarNombre() {
 }
 
 /* función que sirve para comprobar si un usuario está ingresando un nombre valido, solo debe ingresar strings, no son validos los números ni campos vacíos */
-/* Debo checar como hacer por si un usuario ingresa varios espacios salga false ya que null no me está funcionando */
+
 let comprobar = () => nombre != "" && isNaN(verificacion()) && nombre != null && nombre != " ";
 
 /* Función para convertir un nombre en número */
@@ -72,49 +72,55 @@ let verificacion = () => parseFloat(nombre);
 
 let tramite = () => {
 
-    
-
     while(true){
 
     let tramite = prompt('Ingresa 1 si quieres dar en adopción, ingresa 2 si quieres adoptar');
 
      if (tramite == 1) {
+      
       darEnAdopcion();
+
+      break;
+
     } else if( tramite == 2){
+
       adoptar();
+
+      break;
+
     } else{
+
       alert('Ingresa una opción valida');
+      
     }
 
   }
 
-    
-
 };
 
 function darEnAdopcion () {
-  /* esto debe ser un form */
-  let nombreMascota = prompt('Ingresa el nombre de la mascota');
-  /* esto debe ser un button de dos opciones gato o perro */
-  let especieMascota = prompt('Ingresa la especie de la mascota');
-  /* esto debe ser un rango de numeros */
-  let edadMacota = prompt('Ingrese la edad de la mascota');
-  /* esto debe ser tres opciones chico mediano o grande */
-  let tallaMascota = prompt('Ingrese la talla de la mascota');
-  /* Esto debe ser un checkbox entre animales (macho y hembra), personas, otras especies*/
-  let sociableMacota = prompt('Ingrese con quien es sociable la mascota');
-  /* Esto debe ser dos opciones macho o hembra */
-  let sexoMascota = prompt('Ingrese el sexo de la mascota');
-  /* Esto debe ser dos opciones tranquilo o jugueton*/
-  let caracterMascota =  prompt('Ingrese el caracter de la mascota');
-  /* Esto debe ser el estado en donde está */
-  let estadoMascota = prompt('Ingrese el estado en donde se ubica la mascota');
-  /* Esto debe de ser links de imagenes de la mascota */
-  let imagenMascota = prompt('Ingrese las imagenes de la mascota');
 
-  Mascota(n)/* aWUí ME QUEDE */
+  let nombreMascota = prompt('Ingrese el nombre de la mascota');
+  let especieMascota = prompt('Ingrese la especie de la mascota');
+  let edadMascota = prompt('Ingrese la edad de la mascota');
+  let tallaMascota = prompt('Ingrese la talla de la mascota');
+  let sociableMascota = prompt('Con quien es sociable la mascota?');
+  let sexoMascota = prompt('Ingrese el sexo de la mascota');
+  let caracterMascota = prompt('Ingrese si es tranquilo o jugueton');
+  let estadoMascota = prompt('En qué estado se encuentra la mascota?');
+  let imagenMascota = prompt('Ingrese una imagen de la mascota');
+
+  if(especieMascota == 'perro'){
+    PERROS.push(new Mascota(nombreMascota,especieMascota,edadMascota,tallaMascota,sociableMascota,sexoMascota,caracterMascota,estadoMascota,imagenMascota));
+  } else if (especieMascota == 'gato'){
+    GATOS.push(new Mascota(nombreMascota,especieMascota,edadMascota,tallaMascota,sociableMascota,sexoMascota,caracterMascota,estadoMascota,imagenMascota));
+  } else{
+    alert('ingrese una especie correcta');
+    darEnAdopcion();
+  }
 
 }
+
 
 
 
@@ -150,7 +156,7 @@ let menuPerros = (_) => {
   } else {
     alert("No cuentas con el ingreso suficiente para mantener a una mascota");
   }
-};
+}; 
 
 function encuestaDeAdopcion() {
   let espacio = confirm(

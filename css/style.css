@@ -103,3 +103,21 @@ header {
   display: flex;
   flex-flow: wrap;
   gap: 40px; }
+
+.carrousel {
+  background-image: url("../../img/sliderComprimidaRecortada.jpg");
+  height: 740px;
+  background-size: cover;
+  width: 100%;
+  background-position: 50% 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .carrousel .carrouselTexto {
+    padding-left: 2rem;
+    font-family: "Alata", sans-serif;
+    font-size: 2rem;
+    color: #606BFE; }
+    .carrousel .carrouselTexto h2 {
+      width: max-content;
+      background-color: #fae48e9a; }
