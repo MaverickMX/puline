@@ -1,0 +1,14 @@
+main{
+    background-color: white;
+    margin: 1rem;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin-left: 0;
+
+    .titulo-principal{
+
+        color: $primerColor;
+        font-family: $fuentePrimaria;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,31 @@
+.producto{
+    .producto-imagen{
+        max-width: 100%;
+        border-radius: 1rem;
+    }
+
+    .producto-detalles{
+        background-color: $primerColor;
+        color: white;
+        padding: .5rem;
+        font-family: $fuentePrimaria;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .producto-titulo{
+            font-size: 1rem;
+            
+        }
+
+        .producto-comprar{
+            border: none;
+            background-color: $segundoColor;
+            color: $primerColor;
+            padding: .5rem;
+            text-transform: uppercase;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+    }
+}

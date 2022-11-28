@@ -1,0 +1,11 @@
+.numero{
+    background-color: white;
+    color:$primerColor;
+    padding: .25rem;
+    border-radius: .25rem;
+}
+
+.boton-carrito.active .numero{
+    background-color: $primerColor;
+    color: white;
+}

@@ -1,0 +1,43 @@
+.carrito-acciones{
+    display: flex;
+    justify-content: space-between;
+
+    .carrito-acciones-izquierda{
+        .carrito-acciones-borrar{
+            border: 0;
+            background-color: rgba(206, 206, 206, 0.658);
+            padding: 1rem;
+            border-radius: 1rem;
+            color: $primerColor;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+     
+    }
+
+    .carrito-acciones-derecha{
+        display: flex;
+
+        .carrito-acciones-total{
+            display: flex;
+            background-color: rgba(206, 206, 206, 0.658);
+            padding: 1rem;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            color: $primerColor;
+            text-transform: uppercase;
+            gap: 1rem;
+        }
+
+        .carrito-acciones-comprar{
+            border: 0;
+            background-color: $segundoColor;
+            padding: 1rem;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            color: $primerColor;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+}

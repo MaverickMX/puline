@@ -1,0 +1,30 @@
+.active{
+    background-color: white;
+    color: $primerColor;
+    width: 100%;
+    position: relative;
+
+    &::after{
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 2rem;
+        bottom: 100%;
+        right: 0;
+        border-bottom-right-radius: 1rem;
+        box-shadow: 0 1rem 0 white;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: 2rem;
+        top: 100%;
+        right: 0;
+        border-top-right-radius: 1rem;
+        box-shadow: 0 -1rem 0 white;
+    }
+
+
+}
