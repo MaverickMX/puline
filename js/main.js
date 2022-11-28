@@ -174,6 +174,8 @@ const PRODUCTOS = [
 const CONTENEDORPRODUCTOS = document.querySelector('#contenedor-productos');
 const BOTONESCATEGORIAS = document.querySelectorAll('.boton-categoria');
 const TITULOPRINCIPAL = document.querySelector('#titulo-principal');
+let botonesAgregar = document.querySelectorAll('.producto-comprar');
+const NUMERITO = document.querySelector('#numerito');
 
 function cargarProductos(productosElegidos){
   CONTENEDORPRODUCTOS.innerHTML = "";
@@ -194,6 +196,9 @@ function cargarProductos(productosElegidos){
     CONTENEDORPRODUCTOS.append(div);
   })
 
+  actualizarBotonesAgregar()
+  
+
 }
 
 cargarProductos(PRODUCTOS);
@@ -211,14 +216,63 @@ BOTONESCATEGORIAS.forEach(boton =>{
     if (e.currentTarget.id != 'todos') {
      const productosBoton = PRODUCTOS.filter( producto => producto.categoria.id === e.currentTarget.id);
 
+     const PRODUCTOCATEGORIA = PRODUCTOS.find(producto => producto.categoria.id === e.currentTarget.id);
+     TITULOPRINCIPAL.innerText = PRODUCTOCATEGORIA.categoria.nombre;
+
     cargarProductos(productosBoton); 
     } else{
+      TITULOPRINCIPAL.innerText = "Todos los productos";
       cargarProductos(PRODUCTOS)
     }
 
     
   })
 })
+
+function actualizarBotonesAgregar(){
+  botonesAgregar = document.querySelectorAll('.producto-comprar');
+  botonesAgregar.forEach(boton => {
+    boton.addEventListener('click', agregarAlCarrito);
+  })
+}
+
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+
+if (productosEnCarritoLS) {
+
+  productosEnCarrito = JSON.parse(productosEnCarritoLS);
+  actualizarNumerito()
+}else{
+  productosEnCarrito = [];
+}
+
+
+function agregarAlCarrito(e){
+  const IDBOTON = e.currentTarget.id;
+  const PRODUCTOAGREGADO = PRODUCTOS.find(producto => producto.id === IDBOTON);
+  
+
+  if(productosEnCarrito.some(producto => producto.id === IDBOTON)){
+
+    const INDEX = productosEnCarrito.findIndex(producto => producto.id === IDBOTON);
+    productosEnCarrito[INDEX].cantidad++;
+
+  }else{
+    PRODUCTOAGREGADO.cantidad = 1;
+    productosEnCarrito.push(PRODUCTOAGREGADO);
+  }
+  actualizarNumerito()
+  
+  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+}
+
+function actualizarNumerito(){
+  let nuevoNumerito = productosEnCarrito.reduce((acc,producto) => acc + producto.cantidad,0)
+  NUMERITO.innerText = nuevoNumerito;
+}
 
 /* Función constructora para ingresar mascotas nuevas en adopción */
 class Mascota {
