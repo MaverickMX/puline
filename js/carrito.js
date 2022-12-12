@@ -100,6 +100,15 @@ function actualizarBotonesEliminar(){
   BOTONCOMPRAR.addEventListener('click', comprarCarrito);
 
   function comprarCarrito(){
+
+    Swal.fire({
+      title: 'Felicidades',
+      text: 'Tu compra llegará en menos de 24 hrs',
+      iconHtml: '<i class="bi bi-truck"></i>',
+      iconColor: 'green',
+      confirmButtonText: 'Continuar'
+    })
+
     PRODUCTOSENCARRITO.length = 0;
     localStorage.setItem('productos-en-carrito', JSON.stringify(PRODUCTOSENCARRITO));
 
