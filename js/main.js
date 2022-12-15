@@ -14,6 +14,7 @@ function obtenerProductos(){
   .then( response => response.json())
   .then(data =>{
     PRODUCTOS = data;
+    cargarProductos(PRODUCTOS);
   })
 }
 
